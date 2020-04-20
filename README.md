@@ -30,7 +30,11 @@ BeTheHero is a project that aims to connect people who wish to make monetary con
   - `yarn add react-test-renderer` // tests not run on dom
   - `yarn add enzyme-adapter-react-16`
 
-* Create folder ****tests****
+or
+
+  - yarn add -D @testing-library/react
+
+* Create folder \***\*tests\*\***
 
 <!--
   in package.json on 'jest'

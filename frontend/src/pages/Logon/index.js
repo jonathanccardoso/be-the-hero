@@ -37,12 +37,13 @@ export default function Logon() {
           <h1>Faça seu logon</h1>
 
           <input
+            data-testid="form-field"
             placeholder="Sua ID"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
 
-          <button className="button" type="submit">
+          <button data-test-id="form-btn" className="button" type="submit">
             Entrar
           </button>
 
