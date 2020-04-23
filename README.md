@@ -32,9 +32,9 @@ BeTheHero is a project that aims to connect people who wish to make monetary con
 
 or
 
-  - yarn add -D @testing-library/react
+- yarn add -D @testing-library/react
 
-* Create folder \***\*tests\*\***
+* Create folder **tests**
 
 <!--
   in package.json on 'jest'
@@ -54,11 +54,32 @@ or
 - Running tests
   - `yarn test`
 
-## Test on backend with Jest
+### Mobx on ReactJS
+
+Install dependecies
+
+- `yarn add mobx`
+- `yarn add mobx-react`
+- `yarn add --dev @babel/plugin-proposal-decorators`
+
+[MobX Docs](https://mobx.js.org/best/actions.html)
+[Medium](https://medium.com/@caiovaccaro/react-mobx-li%C3%A7%C3%B5es-aprendidas-656b5232dec)
+
+- observable
+- observer
+- action
 
 ### Configurations on vscode
 
 ```json
+"editor.tabSize": 2,
+"emmet.triggerExpansionOnTab": true,
 "emmet.syntaxProfiles": {"javascript":"jsx"},
 "emmet.includeLanguages": {"javascript":"javascriptreact"},
+"[javascript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[html]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 ```

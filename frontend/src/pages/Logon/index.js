@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 
+import { observable, action } from "mobx";
+import { observer } from "mobx-react";
+
 import api from "../../services/api";
 
 import "./styles.css";
@@ -9,11 +12,14 @@ import "./styles.css";
 import logoImg from "../../assets/logo.svg";
 import heroesImg from "../../assets/heroes.png";
 
-export default function Logon() {
-  const [id, setId] = useState("");
+export default observer(function Logon() {
+  // const [id, setId] = useState("");
+  const id = observable.box("");
+
   const history = useHistory();
 
-  async function handleLogin(e) {
+  // action(async function handleLogin(e) {
+  const handleLogin = action(async function (e) {
     e.preventDefault();
 
     try {
@@ -25,8 +31,9 @@ export default function Logon() {
       history.push("/profile");
     } catch (err) {
       alert("Falha no login, tente novamente.");
+      alert(id);
     }
-  }
+  });
 
   return (
     <div className="logon-container">
@@ -40,7 +47,7 @@ export default function Logon() {
             data-testid="form-field"
             placeholder="Sua ID"
             value={id}
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => id.set(e.target.value)}
           />
 
           <button data-test-id="form-btn" className="button" type="submit">
@@ -57,4 +64,4 @@ export default function Logon() {
       <img src={heroesImg} alt="Heroes" />
     </div>
   );
-}
+});
