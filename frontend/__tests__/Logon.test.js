@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link, useHistory } from "react-router-dom";
+
 import { fireEvent, render, waitForElement } from "@testing-library/react";
 
 import Logon from "../src/pages/Logon/index";
@@ -12,14 +14,10 @@ describe("Testing Logon Component", () => {
     fireEvent.change(fieldNode, { target: { value: newLogon } });
     expect(fieldNode.value).toEqual(newLogon);
 
-    const btnNode = await waitForElement(
-      () => getByTestId('form-btn')
-    )
-    fireEvent.click(btnNode)
+    const btnNode = await waitForElement(() => getByTestId("form-btn"));
+    fireEvent.click(btnNode);
 
-    const tdNode = await waitForElement(
-      () => getByText(newLogon)
-    )
-    expect(tdNode).toBeDefined()
+    const tdNode = await waitForElement(() => getByText(newLogon));
+    expect(tdNode).toBeDefined();
   });
 });

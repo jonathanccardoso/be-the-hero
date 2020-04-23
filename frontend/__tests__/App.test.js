@@ -1,13 +1,12 @@
 import React from "react";
-import { shallow } from "enzyme"; // simulation DOM
+// simulation DOM
+import { shallow } from "enzyme";
 import App from "../src/App";
 
 describe("Testing App Component", () => {
   it("should render correctly", () => {
-    const wrapper = shallow(
-      <App />
-    );
+    const wrapper = shallow(<App />);
 
-    except(wrapper).toMatchSnapshot(); // to record test
+    expect(wrapper.getElements()).toMatchSnapshot();
   });
 });
