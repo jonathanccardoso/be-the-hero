@@ -9,6 +9,8 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import NewIncident from "./pages/NewIncident";
 
+import RepoList from "./components/RepoList/index.js";
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -28,6 +30,7 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Logon} />
         <Route path="/register" component={Register} />
+        <Route path="/repoList" component={RepoList} />
 
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/incidents/new" component={NewIncident} />
