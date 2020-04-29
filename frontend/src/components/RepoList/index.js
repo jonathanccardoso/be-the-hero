@@ -4,11 +4,11 @@ import { observable, action } from "mobx";
 import { observer } from "mobx-react";
 
 export default observer(function RepoList() {
-  // const [repositories, setRepositories] = useState([]);
-  // const [newRepo, setNewRepo] = useState([]);
+  const [repositories, setRepositories] = useState([]);
+  const [newRepo, setNewRepo] = useState([]);
 
-  const repositories = observable.box("");
-  const Repo = observable.box("");
+  // const repositories = observable.box("");
+  // const Repo = observable.box("");
 
   const handleSubmit = action(function (e) {
     e.preventDefault();

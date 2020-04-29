@@ -3,7 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import api from "../../services/api";
-import "./styles.css";
+
+// import "./styles.css";
+import { RegisterContainer, Content } from "./styled.js";
 
 import logoImg from "../../assets/logo.svg";
 
@@ -40,8 +42,8 @@ export default function Register() {
   }
 
   return (
-    <div className="register-container">
-      <div className="content">
+    <RegisterContainer>
+      <Content>
         <section>
           <img src={logoImg} alt="Be The Hero" />
 
@@ -96,7 +98,7 @@ export default function Register() {
             Cadastrar
           </button>
         </form>
-      </div>
-    </div>
+      </Content>
+    </RegisterContainer>
   );
 }
